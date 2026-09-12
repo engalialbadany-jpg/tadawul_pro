@@ -1,0 +1,16 @@
+workflows:
+  default-workflow:
+    name: Default Workflow
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+    scripts:
+      - name: Create Flutter project structure
+        script: |
+          flutter create . --org com.tadawulpro --project-name tadawul_pro
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - engalialbadany@gmail.com
